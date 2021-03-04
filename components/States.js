@@ -1,13 +1,13 @@
 import React,{useState,useCallback,Component,useEffect} from 'react';
-import axios from "axios";
 import {View,Text,StyleSheet,Button,FlatList,ActivityIndicator } from 'react-native';
 import Card from './Card'
 import {useSelector,useDispatch} from 'react-redux';
+import {connect} from 'react-redux';
 import {fetchData} from './dataactions'; 
 
 class States extends Component{
   componentDidMount(){
-    this.props.fetchData(this.props.statesdata)
+    this.props.fetchData()
   }
   render(){
   return(
@@ -42,4 +42,13 @@ class States extends Component{
 })
  
 
-export default States;
+function mapStateToProps(state) {
+  // console.log(state.myaccountscreen.getoffer, 'sadasd');
+  return {
+    getOfferList: state.data.statesdata,
+  };
+}
+
+export default connect(mapStateToProps, {
+  fetchData,
+})(States);
