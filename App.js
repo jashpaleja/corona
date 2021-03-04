@@ -12,14 +12,14 @@ const rootReducer = combineReducers({
 data:dataReducer
 })
 const store = createStore(rootReducer,applyMiddleware(ReduxThunk)); 
-export default function App() {
-  
-  return (
-  <Provider store={store}>
+class App extends Component() {
+  render()
+ {
+   return (<Provider store={store}>
     <MyStack/>
   </Provider>
   );
-  
+}
 }
 
 const styles = StyleSheet.create({

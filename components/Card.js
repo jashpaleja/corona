@@ -1,37 +1,43 @@
-import React from 'react';
+import React,{Component} from 'react';
 import { StyleSheet,View,Text } from 'react-native';
 
-const Card = (props)=>{
-  return(
-  <View style={styles.card}>
-    <View style={styles.upp}>
-      <Text style={styles.state}>{props.state}</Text>
-      <View style={{flexDirection:'row',}}>
-      <Text style={styles.t}>{props.time}</Text>
-      <Text style={styles.t}>{props.date}</Text>  
+class Card extends Component{
+  render(){
+    return(
+      <View>
+        <Text>bro chava </Text>
       </View>
-    </View>
-    <View style={{flexDirection:'row',}}>
-      <Text style={styles.h}>Confirmed:</Text>
-      <Text style={styles.h}>Active:</Text>  
-      </View>
-      <View style={{flexDirection:'row',}}>
-      <Text style={styles.c}>
-        {props.confirmed}
-        </Text>
-      <Text style={styles.c}>
-        {props.active}
-        </Text>  
-      </View><View style={{flexDirection:'row',}}>
-      <Text style={styles.h}>Recovered:</Text>
-      <Text style={styles.h}>Deaths:</Text>  
-      </View>
-      <View style={{flexDirection:'row',}}>
-      <Text style={styles.c}>{props.recovered}</Text>
-      <Text style={styles.c}>{props.deaths}</Text>  
-      </View>
-  </View>)
-}
+      // <View style={styles.card}>
+      //   <View style={styles.upp}>
+      //     <Text style={styles.state}>{props.state}</Text>
+      //     <View style={{flexDirection:'row',}}>
+      //     <Text style={styles.t}>{props.time}</Text>
+      //     <Text style={styles.t}>{props.date}</Text>  
+      //     </View>
+        //   </View>
+      //   <View style={{flexDirection:'row',}}>
+      //     <Text style={styles.h}>Confirmed:</Text>
+      //     <Text style={styles.h}>Active:</Text>  
+      //     </View>
+      //     <View style={{flexDirection:'row',}}>
+      //     <Text style={styles.c}>
+      //       {props.confirmed}
+      //       </Text>
+      //     <Text style={styles.c}>
+      //       {props.active}
+      //       </Text>  
+      //     </View><View style={{flexDirection:'row',}}>
+      //     <Text style={styles.h}>Recovered:</Text>
+      //     <Text style={styles.h}>Deaths:</Text>  
+      //     </View>
+      //     <View style={{flexDirection:'row',}}>
+      //     <Text style={styles.c}>{props.recovered}</Text>
+      //     <Text style={styles.c}>{props.deaths}</Text>  
+      //     </View>
+      // </View>)
+  // }
+  
+)}}
 
 const styles = StyleSheet.create({
   state:{

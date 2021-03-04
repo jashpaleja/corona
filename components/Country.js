@@ -1,12 +1,15 @@
 import React,{Component} from 'react';
 import {View,Text,StyleSheet} from 'react-native';
 
- const Country =props=>{
-  return (<View style={styles.container}>
+ class Country extends Component{
+  render(){
+    return (<View style={styles.container}>
     <Text>Country
       cxfbcgvnvartgadbahdahdgagsfdgabv5dxcb tgvbn bcderfvc vbn vtavasbdvabsdvabdvbasd ab 
     </Text>
   </View>);
+  }
+  
 }
 
 const styles = StyleSheet.create({
