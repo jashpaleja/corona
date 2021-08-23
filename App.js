@@ -6,28 +6,20 @@ import MyStack from './components/Navigation';
 import { Provider } from 'react-redux';
 import {createStore,combineReducers,applyMiddleware} from 'redux';
 import ReduxThunk from 'redux-thunk';
-import dataReducer from './components/datareducer';
-import {fetchData} from './components/dataactions';
+import datareducer from './components/datareducer';
 const rootReducer = combineReducers({
-data:dataReducer
+data:datareducer
 })
-const store = createStore(rootReducer,applyMiddleware(ReduxThunk)); 
-class App extends Component() {
+ 
+class App extends Component{
   render()
  {
-   return (<Provider store={store}>
+  const store = createStore(rootReducer,applyMiddleware(ReduxThunk));
+   return (
+   <Provider store={store}>
     <MyStack/>
-  </Provider>
+    </Provider>
   );
 }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop:30
-  },
-});
+export default App;

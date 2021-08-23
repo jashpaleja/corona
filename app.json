@@ -4,11 +4,11 @@
     "slug": "corona",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/covid-19.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/social_2.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#f44336"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,9 +21,11 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/covid-19.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "versionCode": 1,
+      "package": "com.jashpaleja123.corona"
     },
     "web": {
       "favicon": "./assets/favicon.png"

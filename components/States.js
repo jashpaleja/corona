@@ -1,9 +1,8 @@
-import React,{useState,useCallback,Component,useEffect} from 'react';
-import {View,Text,StyleSheet,Button,FlatList,ActivityIndicator } from 'react-native';
+import React,{Component} from 'react';
+import {View,Text,StyleSheet,Button,FlatList,ActivityIndicator, SafeAreaView } from 'react-native';
 import Card from './Card'
-import {useSelector,useDispatch} from 'react-redux';
+import {fetchData} from './dataactions';
 import {connect} from 'react-redux';
-import {fetchData} from './dataactions'; 
 
 class States extends Component{
   componentDidMount(){
@@ -11,24 +10,23 @@ class States extends Component{
   }
   render(){
   return(
-    
-      <View style={styles.container}>
-           
-  <Text>hi</Text>
-      </View>
-  // <FlatList 
-  // data={data} 
-  // keyExtractor={item=>item.id} 
-  // renderItem={itemData=><Card 
-  // state={itemData.item.state} 
-  // time={itemData.item.time} 
-  // date={itemData.item.date} 
-  // confirmed={itemData.item.confirmed}
-  // active={itemData.item.active}
-  // recovered={itemData.item.recovered}
-  // deaths={itemData.item.deaths}
-  // />}
-  // />
+
+      <SafeAreaView style={styles.container}>
+      <FlatList
+      data={this.props.getofferList}
+      keyExtractor={item=>item.id}
+      renderItem={itemData=><Card
+      state={itemData.item.state}
+      time={itemData.item.lastupdatedtime.split(" ")[1]}
+      date={itemData.item.lastupdatedtime.split(" ")[0]}
+      confirmed={itemData.item.confirmed}
+      active={itemData.item.active}
+      recovered={itemData.item.recovered}
+      deaths={itemData.item.deaths}
+      />}
+      />
+      </SafeAreaView>
+
     )}}
 
 
@@ -40,13 +38,14 @@ class States extends Component{
     justifyContent: 'center',
   },
 })
- 
 
 function mapStateToProps(state) {
-  // console.log(state.myaccountscreen.getoffer, 'sadasd');
+  // console.log(state.data.statesdata);
   return {
-    getOfferList: state.data.statesdata,
+    getofferList: state.data.statesdata
+    
   };
+  
 }
 
 export default connect(mapStateToProps, {
