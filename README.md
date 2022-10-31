@@ -6,4 +6,4 @@ Which is now discontinued so one cannot see the data updated for present day.
 This application was build in React native for implementation of Api calling and parsing JSON data in a FlatList.
 
 To get it working one can pull the project and run 
-npm install to proceed.
+`npm install to proceed`.
